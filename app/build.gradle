@@ -23,10 +23,10 @@ android {
         // Run: export APP_KEY={password}
         // TODO Add your release keystore in /keystore folder
         release {
-//            storeFile file('keystore/release.keystore')
-//            keyAlias 'alias'
-//            storePassword "$System.env.APP_KEY"
-//            keyPassword "$System.env.APP_KEY"
+            storeFile file('keystore/release.keystore')
+            keyAlias 'androiddebugkey'
+            storePassword 'android'
+            keyPassword 'android'
         }
 
         debug {
@@ -41,8 +41,8 @@ android {
         release {
             signingConfig signingConfigs.release
 
-            minifyEnabled true
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            minifyEnabled false
+            //proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
 
             ext.betaDistributionReleaseNotesFilePath =
                     file('../crashlytics_release_notes.txt').absolutePath
